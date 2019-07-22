@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :v1 do
+    get  '/lists/:name' => 'lists#show'
+    get '/lists' => 'lists#index'
+    post '/lists' => 'lists#create'
+    post '/lists/:list_name/items' => 'tasks#create'
+  end
+  
+
 end
